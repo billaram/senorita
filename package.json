@@ -2,7 +2,7 @@
   "name": "senorita",
   "version": "1.0.0",
   "description": "Conversation to intent, trigger workflows based on the intent",
-  "main": "src",
+  "main": "dist",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
@@ -30,7 +30,7 @@
     "winston-daily-rotate-file": "^1.4.5"
   },
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "nodemon dist/app.js",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "build": "gulp",
     "lint": "eslint src",
