@@ -5,10 +5,10 @@ var path = require('path')
 var rfs = require('rotating-file-stream')
 var fs = require('fs')
 var bodyParser = require('body-parser')
-require('dotenv-safe').load({
+/*require('dotenv-safe').load({
     allowEmptyValues: true,
     sample: './.env.sample'
-});
+});*/
 //local imports 
 var logDirectory = path.join(__dirname,'../', 'logs')
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
@@ -35,7 +35,7 @@ app.use(morgan('combined', {stream: accessLogStream}))
 var urlencodedParser = bodyParser.urlencoded({ extended:true,limit:1024*1024*50})
 var mongoose   = require('mongoose');
 mongoose.connect(process.env.DB_CONN);
-var server = app.listen(8080, function () {
+var server = app.listen(process.env.PORT, function () {
 	try
 	{
 
